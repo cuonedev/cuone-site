@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600">
+<defs><g id="arrow"><path d="M-10 -6 Q-4 -2 0 0 Q-4 3 -10 7" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></g></defs>
+<rect width="1080" height="600" rx="18" fill="#fffdf6"/>
+<text x="540" y="67" text-anchor="middle" font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" font-size="40" font-weight="700" fill="#222">开发任务能分工，Agent 却还要靠人交接</text>
+<path d="M118 91 Q540 96 962 90" stroke="#333" stroke-width="2.5" fill="none"/>
+<text x="540" y="139" text-anchor="middle" font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" font-size="25" fill="#555">一项任务经过多个环节，信息在工具之间断开</text>
+<g font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" text-anchor="middle">
+<path d="M85 186 Q90 178 101 180 L290 180 Q301 181 300 193 L300 309 Q298 318 288 318 L96 318 Q84 316 85 306Z" fill="#fff" stroke="#222" stroke-width="3"/><text x="193" y="224" font-size="23" fill="#555">方案分析</text><text x="193" y="271" font-size="31" fill="#245ba8" font-weight="700">Codex</text><text x="193" y="300" font-size="18" fill="#666">梳理需求与方案</text>
+<path d="M440 186 Q443 178 455 180 L644 180 Q655 181 655 193 L655 309 Q653 318 642 318 L450 318 Q438 316 440 306Z" fill="#fff" stroke="#222" stroke-width="3"/><text x="547" y="224" font-size="23" fill="#555">代码实现</text><text x="547" y="271" font-size="31" fill="#c5412e" font-weight="700">OpenCode</text><text x="547" y="300" font-size="18" fill="#666">按任务调用不同模型</text>
+<path d="M795 186 Q798 178 810 180 L999 180 Q1010 181 1010 193 L1010 309 Q1008 318 997 318 L805 318 Q793 316 795 306Z" fill="#fff" stroke="#222" stroke-width="3"/><text x="902" y="224" font-size="23" fill="#555">代码审查</text><text x="902" y="271" font-size="31" fill="#258148" font-weight="700">审查 Agent</text><text x="902" y="300" font-size="18" fill="#666">检查实现与风险</text>
+<path d="M306 249 L427 249" stroke="#333" stroke-width="3" stroke-linecap="round"/><use href="#arrow" x="427" y="249" color="#333"/><path d="M661 249 L782 249" stroke="#333" stroke-width="3" stroke-linecap="round"/><use href="#arrow" x="782" y="249" color="#333"/>
+<path d="M310 221 Q338 192 365 187 T424 220" stroke="#d34b32" stroke-width="2.7" stroke-dasharray="6 7" stroke-linecap="round" fill="none"/><path d="M666 221 Q695 191 722 187 T780 220" stroke="#d34b32" stroke-width="2.7" stroke-dasharray="6 7" stroke-linecap="round" fill="none"/>
+<text x="365" y="174" font-size="18" fill="#c5412e">人来整理、转交</text><text x="720" y="174" font-size="18" fill="#c5412e">人再转交一次</text>
+<path d="M362 384 Q365 376 376 378 L704 378 Q715 379 715 391 L715 475 Q713 484 702 484 L372 484 Q360 482 362 472Z" fill="#fff" stroke="#d44a31" stroke-width="3"/><text x="538" y="416" font-size="23" fill="#c5412e" font-weight="700">Markdown 文档</text><text x="538" y="451" font-size="20" fill="#444">记录背景、方案和阶段结论</text><text x="538" y="476" font-size="17" fill="#777">能留痕，但不会自动通知或确认接手</text>
+<path d="M190 329 Q193 356 256 375 T334 405" stroke="#d44a31" stroke-width="2.7" stroke-dasharray="6 7" stroke-linecap="round" fill="none"/><path d="M900 329 Q894 356 823 378 T743 405" stroke="#d44a31" stroke-width="2.7" stroke-dasharray="6 7" stroke-linecap="round" fill="none"/>
+<text x="540" y="548" font-size="25" fill="#245ba8" font-weight="700">分工已经形成，缺少的是 Agent 之间的沟通渠道</text>
+</g></svg>

@@ -1,0 +1,15 @@
+- name: AI Agent 协作
+  repository: cuo-aiteams
+  url: /projects/cuo-aiteams/
+  summary: 探索不同 Agent 之间的消息传递、任务交接与协作方式。
+  status: 进行中
+- name: 轻量通用 Agent
+  repository: cuo-agent
+  url: /projects/cuo-agent/
+  summary: 基于 AgentScope Java 的轻量通用 Agent 项目。
+  status: 进行中
+- name: 量化研究
+  repository: cuo-quant
+  url: /projects/cuo-quant/
+  summary: 记录量化项目的研究方向与工程实践。
+  status: 进行中

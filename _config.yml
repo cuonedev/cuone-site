@@ -1,0 +1,29 @@
+title: Cuone
+description: AI Agent 协作、轻量通用 Agent 与量化研究
+url: ""
+baseurl: ""
+lang: zh-CN
+markdown: kramdown
+permalink: /blog/:categories/:year/:month/:day/:title/
+timezone: Asia/Shanghai
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "projects"
+    values:
+      layout: project
+  - scope:
+      path: ""
+    values:
+      layout: page
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

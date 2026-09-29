@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="prose article-content">
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">← 返回博客</a>
+  <header class="article-header">
+    <p class="eyebrow">{{ page.categories | join: ' / ' }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="article-meta">
+      <span>{{ page.author | default: "Cuone" }}</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日" }}</time>
+    </p>
+    <div class="article-context">
+      {% if page.series_url %}<a href="{{ page.series_url | relative_url }}">专题：{{ page.series }}</a>{% endif %}
+      {% if page.project_url %}<a href="{{ page.project_url | relative_url }}">项目：{{ page.project_title }}</a>{% endif %}
+    </div>
+  </header>
+  {{ content }}
+</article>
