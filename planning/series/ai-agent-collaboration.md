@@ -44,4 +44,4 @@
 
 第一篇已发布，站点文章位于 [`_posts/2026-09-29-multiple-ai-agents.md`](../../_posts/2026-09-29-multiple-ai-agents.md)。第二篇正在写作，当前草稿位于 [`_drafts/02-多个 AI Agent 的 MCP 本机与局域网协作实践.md`](../../_drafts/02-多个%20AI%20Agent%20的%20MCP%20本机与局域网协作实践.md)。
 
-后续每篇沿用同一编号整理正文和发布素材：`NN-标题.md`、`NN-信息流短描述.md`、`NN-信息流小图.png`；封面有可编辑矢量源文件时，同时保留 `.svg`。文章中的正文配图按信息增益决定，不要求每节都配图。
+后续每篇沿用同一编号整理正文和发布素材：正文按 `NN-标题.md` 命名并放在 `_drafts/` 或 `_posts/`；短描述和信息流小图放在 `planning/series/ai-agent-collaboration/promotion/`，分别命名为 `NN-信息流短描述.md`、`NN-信息流小图.svg` 和 `NN-信息流小图.png`。文章正文配图放在 `assets/images/posts/`，按信息增益决定，不要求每节都配图。

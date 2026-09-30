@@ -11,6 +11,8 @@ toc: true
 
 　　借助开源项目 `cross-agent-teams-mcp`，多个 AI Agent 可以通过 MCP 接入同一个通信服务，在本机或不同设备之间注册身份、发送消息并查看收件箱。本文以 Codex 和 OpenCode 为例，整理项目的安装配置与使用步骤：先配置本机通信，再扩展到局域网中的另一台设备。
 
+　　下文命令固定使用 `cross-agent-teams-mcp@0.8.6`，便于复现。Agent 配置格式还会受 Codex、OpenCode 版本影响，实际操作前应核对各工具的最新文档。
+
 　　示例中，设备 A 运行 MCP daemon 和本机 Agent，设备 B 运行远端 Agent。跨设备连接需要局域网互通并配置 daemon token。项目目前使用共享 token，且未提供 TLS 和逐 Agent 鉴权，因此只适合可信局域网内使用，不要将服务直接暴露到公网。
 
 ![Codex 和 OpenCode 通过本机 MCP 服务发送消息并从收件箱读取]({{ '/assets/images/posts/02-本机MCP消息链路.png' | relative_url }})
@@ -35,7 +37,7 @@ npm --version
 　　在设备 A 的终端启动 daemon，并保持进程运行：
 
 ```bash
-npx -y cross-agent-teams-mcp@latest daemon --port 9100
+npx -y cross-agent-teams-mcp@0.8.6 daemon --device host-a --port 9100
 ```
 
 　　服务默认监听 `127.0.0.1:9100`，只接受本机连接。在另一个终端检查健康状态：
@@ -52,7 +54,7 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:9100/health'
 
 ```powershell
 $env:XATS_TOKEN = '替换为你生成的高强度随机值'
-npx -y cross-agent-teams-mcp@latest daemon --host 0.0.0.0 --port 9100 --token $env:XATS_TOKEN --device host-a
+npx -y cross-agent-teams-mcp@0.8.6 daemon --host 0.0.0.0 --port 9100 --token $env:XATS_TOKEN --device host-a
 ```
 
 　　`--host 0.0.0.0` 会监听设备 A 的所有网络接口。项目要求非 loopback 监听必须提供 `--token`，缺少 token 时 daemon 会拒绝启动。若需要限制监听范围，可将 `0.0.0.0` 换成设备 A 的局域网 IP。
@@ -96,7 +98,7 @@ $env:XATS_TOKEN = '替换为设备 A 上 daemon 使用的同一个 token'
 {
   "mcp": {
     "cross-agent-teams-mcp": {
-      "type": "streamable_http",
+      "type": "remote",
       "url": "http://127.0.0.1:9100/mcp",
       "headers": {
         "Authorization": "Bearer 替换为设备A上daemon使用的同一个token"
@@ -105,6 +107,8 @@ $env:XATS_TOKEN = '替换为设备 A 上 daemon 使用的同一个 token'
   }
 }
 ```
+
+　　OpenCode 示例将 token 写在 MCP 请求头中。不要把含有真实 token 的配置文件提交到仓库；跨设备配置也应妥善保管。
 
 　　如果文件已有其他 MCP 配置，只合并 `cross-agent-teams-mcp` 这一项。配置完成后重启 Codex 和 OpenCode，并确认它们都能看到项目提供的注册、发消息和查看收件箱工具。Codex 配置细节可参考项目的 [Codex CLI 配置说明](https://github.com/jtianling/cross-agent-teams-mcp/blob/main/docs/configs/codex-cli.md)。
 
@@ -171,7 +175,7 @@ $env:XATS_TOKEN = '替换为设备 A 上 daemon 使用的同一个 token'
 {
   "mcp": {
     "cross-agent-teams-mcp": {
-      "type": "streamable_http",
+      "type": "remote",
       "url": "http://10.0.0.10:9100/mcp",
       "headers": {
         "Authorization": "Bearer 替换为设备A上daemon使用的同一个token"
@@ -215,8 +219,10 @@ Send reviewer:host-b a message: 局域网消息已收到，请回复“跨设备
 
 ## 官方资料
 
+- [`cross-agent-teams-mcp@0.8.6` npm 版本页](https://www.npmjs.com/package/cross-agent-teams-mcp/v/0.8.6)
 - [项目官方中文 README](https://github.com/jtianling/cross-agent-teams-mcp/blob/main/README.zh-CN.md)
 - [Codex CLI 配置说明](https://github.com/jtianling/cross-agent-teams-mcp/blob/main/docs/configs/codex-cli.md)
 - [OpenCode 配置说明](https://github.com/jtianling/cross-agent-teams-mcp/blob/main/docs/configs/opencode.md)
+- [OpenCode 官方 MCP 配置文档](https://opencode.ai/docs/mcp-servers/)
 
 > **使用提示：**项目持续更新，操作前请核对官方文档中的最新参数与配置路径。不同操作系统、Agent 版本和网络环境可能需要相应调整。

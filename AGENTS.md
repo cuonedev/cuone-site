@@ -4,4 +4,4 @@
 
 新建或修改 AI 协作系列配图时，还需遵循本仓库 Skill：[article-illustration](.agents/skills/article-illustration/SKILL.md)。其他主题配图可复用其中的文件和检查要求，并根据主题建立合适的视觉规范。
 
-系列规划放在 `planning/series/`，未发布文章放在 `_drafts/`，审核发布后放入 `_posts/`。普通 GitHub Pages 构建不得启用 Jekyll 的 `--drafts` 参数。
+系列规划放在 `planning/series/`，未发布文章放在 `_drafts/`，审核发布后放入 `_posts/`。系列对外发布素材（短描述、信息流图片等）按系列和篇次放在 `planning/series/<series-id>/promotion/`；图片源稿与发布图成对保留 SVG 和 PNG。文章正文配图放在 `assets/images/posts/`。普通 GitHub Pages 构建不得启用 Jekyll 的 `--drafts` 参数。
