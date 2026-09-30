@@ -5,7 +5,7 @@ order: 1
 permalink: /projects/
 ---
 
-以下是 Cuone 当前公开的三个项目实践方向，分别关注 Agent 协作、通用 Agent 工具和量化研究。它们展示阶段性进展，不代表 Cuone 组织关注方向的全部范围；项目介绍以现有公开资料为准。
+这里整理了我正在推进的三个项目，涵盖 Agent 协作、通用 Agent 开发和量化研究。项目状态与具体说明以各自仓库为准。
 
 ## AI Agent 协作
 
@@ -15,7 +15,7 @@ permalink: /projects/
 
 ## 轻量通用 Agent
 
-基于 AgentScope Java 开发的轻量通用 Agent 项目，探索通用 Agent 能力的组织与实现。
+基于 AgentScope Java 的轻量通用 Agent 项目，探索通用 Agent 的核心能力与实现方式。
 
 [查看项目介绍]({{ '/projects/cuo-agent/' | relative_url }}) · [GitHub 仓库](https://github.com/cuonedev/cuo-agent)
 
