@@ -7,7 +7,7 @@ permalink: /about/
 
 ## 名称由来
 
-Cuone 读作 /kjuːˈwʌn/，中文名“丘亦”取其谐音。名称由 Cu 和 One 组成：Cu 取自铜的元素符号，One 表示数字 1。
+Cuone 读作 /kjuːˈwʌn/，中文代号“丘亦”取其谐音。名称由 Cu 和 One 组成：Cu 取自铜的元素符号，One 表示数字 1。
 
 ## 组织方向
 
