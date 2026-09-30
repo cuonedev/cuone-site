@@ -5,7 +5,7 @@ order: 1
 permalink: /projects/
 ---
 
-Cuone 当前推进三个研发项目，分别关注 Agent 协作、通用 Agent 工具和量化研究。项目介绍以现有公开进展为准。
+以下是 Cuone 当前公开的三个项目实践方向，分别关注 Agent 协作、通用 Agent 工具和量化研究。它们展示阶段性进展，不代表 Cuone 组织关注方向的全部范围；项目介绍以现有公开资料为准。
 
 ## AI Agent 协作
 

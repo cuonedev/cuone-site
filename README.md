@@ -1,6 +1,6 @@
 # Cuone Site
 
-Cuone 官网与技术博客，使用 Jekyll 和 Chirpy，通过 GitHub Actions 发布到 GitHub Pages。
+丘亦 Cuone 官网与技术博客。Cuone 专注 AI 应用构建与研发效能提升，沉淀工程实践，探索智能生产力，并持续关注其他软件相关方向。本网站使用 Jekyll 和 Chirpy，通过 GitHub Actions 发布到 GitHub Pages。
 
 ## 内容位置
 

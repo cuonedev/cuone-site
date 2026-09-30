@@ -16,10 +16,10 @@ timezone: Asia/Shanghai
 
 title: Cuone # the main title
 
-tagline: AI Agent 协作、轻量通用 Agent 与量化研究 # it will display as the subtitle
+tagline: 丘亦 Cuone /kjuːˈwʌn/ # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Cuone 聚焦软件工程与量化研究方向的项目实践，持续推进 Agent 协作、通用 Agent 和量化研究。
+  专注 AI 应用构建与研发效能提升，沉淀工程实践，探索智能生产力；持续关注 AI 与软件相关领域。
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
