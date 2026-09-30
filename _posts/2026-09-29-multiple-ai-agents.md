@@ -1,7 +1,7 @@
 ---
 title: 多个 AI Agent 如何协作？
 date: 2026-09-29
-authors: [cuonedev]
+authors: [cuone]
 categories: ["AI 协作"]
 tags: [Agent, MCP]
 series: AI 协作实践
