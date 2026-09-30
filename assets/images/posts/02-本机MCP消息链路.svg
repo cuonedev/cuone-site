@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600">
+<rect width="1080" height="600" rx="18" fill="#fffdf6"/>
+<text x="540" y="66" text-anchor="middle" font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" font-size="39" font-weight="700" fill="#222">本机多个 AI Agent 如何通过 MCP 协作？</text>
+<path d="M118 89 Q540 96 962 89" fill="none" stroke="#222" stroke-width="2.5"/>
+<text x="540" y="132" text-anchor="middle" font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" font-size="21" fill="#555">两个 Agent 接入同一服务，消息经收件箱交接</text>
+
+<g font-family="KaiTi,STKaiti,Microsoft YaHei,sans-serif" text-anchor="middle">
+<!-- Agent A -->
+<path d="M44 206 Q47 196 60 198 L292 198 Q304 199 304 211 L302 350 Q300 361 288 361 L57 359 Q44 358 44 346Z" fill="#fff" stroke="#245ba8" stroke-width="3"/>
+<text x="174" y="247" font-size="27" font-weight="700" fill="#245ba8">Codex</text><text x="174" y="283" font-size="21" fill="#444">planner</text><text x="174" y="324" font-size="18" fill="#666">MCP Client</text>
+
+<!-- Shared service -->
+<path d="M388 177 Q391 166 405 168 L675 168 Q689 169 689 182 L686 369 Q684 380 671 380 L401 378 Q388 377 388 364Z" fill="#f0f8ef" stroke="#258148" stroke-width="3"/>
+<text x="538" y="222" font-size="23" font-weight="700" fill="#258148">cross-agent-teams-mcp</text><text x="538" y="258" font-size="21" fill="#333">本机 MCP daemon</text><path d="M430 276 Q538 281 646 275" fill="none" stroke="#258148" stroke-width="1.5"/><text x="538" y="311" font-size="18" fill="#444">Agent 注册 · 消息收件箱</text><text x="538" y="345" font-size="17" fill="#666">127.0.0.1:9100</text>
+
+<!-- Agent B -->
+<path d="M772 206 Q775 196 788 198 L1020 198 Q1032 199 1032 211 L1030 350 Q1028 361 1016 361 L785 359 Q772 358 772 346Z" fill="#fff" stroke="#c5412e" stroke-width="3"/>
+<text x="902" y="247" font-size="27" font-weight="700" fill="#c5412e">OpenCode</text><text x="902" y="283" font-size="21" fill="#444">coder</text><text x="902" y="324" font-size="18" fill="#666">MCP Client</text>
+
+<!-- Message to receiver -->
+<path d="M311 239 Q332 236 349 238 T382 239" fill="none" stroke="#333" stroke-width="3.2" stroke-linecap="round"/><path d="M372 230 Q380 235 388 239 Q380 243 371 249" fill="none" stroke="#333" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><text x="347" y="218" font-size="16" fill="#245ba8">发送消息</text>
+<path d="M695 239 Q716 236 733 238 T766 239" fill="none" stroke="#333" stroke-width="3.2" stroke-linecap="round"/><path d="M756 230 Q764 235 772 239 Q764 243 755 249" fill="none" stroke="#333" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><text x="731" y="218" font-size="16" fill="#258148">消息入箱</text>
+
+<!-- Reply and read-back -->
+<path d="M770 315 Q750 318 732 316 T697 315" fill="none" stroke="#333" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="7 6"/><path d="M707 307 Q699 312 691 315 Q699 320 708 325" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="733" y="344" font-size="16" fill="#c5412e">回复</text>
+<path d="M385 315 Q365 318 347 316 T312 315" fill="none" stroke="#333" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="7 6"/><path d="M322 307 Q314 312 306 315 Q314 320 323 325" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="347" y="344" font-size="16" fill="#245ba8">查收回复</text>
+
+<!-- Important distinction -->
+<path d="M82 438 Q85 428 98 430 L982 430 Q995 431 995 444 L992 522 Q990 532 978 532 L95 530 Q82 529 82 517Z" fill="#fff7ee" stroke="#c5412e" stroke-width="2.7"/>
+<text x="540" y="469" font-size="23" font-weight="700" fill="#c5412e">消息进入收件箱，不等于 Agent 会自动醒来</text><text x="540" y="501" font-size="17" fill="#555">基础流程先手动查收；自动唤醒需按宿主另行配置</text>
+</g></svg>

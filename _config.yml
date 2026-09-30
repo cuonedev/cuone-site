@@ -219,6 +219,10 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - planning
+  - .agents
+  - AGENTS.md
+  - "写作与配图规范.md"
 
 jekyll-archives:
   enabled: [categories, tags]
