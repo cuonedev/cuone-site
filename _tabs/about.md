@@ -1,5 +1,7 @@
 ---
-title: 关于 Cuone
+title: 关于
+icon: fas fa-info-circle
+order: 6
 permalink: /about/
 ---
 

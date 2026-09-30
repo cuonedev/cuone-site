@@ -1,8 +1,0 @@
-<header class="site-header">
-  <a class="brand" href="{{ '/' | relative_url }}" aria-label="Cuone 首页">Cuone</a>
-  <nav aria-label="主导航">
-    {% for item in site.data.navigation %}
-      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
-    {% endfor %}
-  </nav>
-</header>

@@ -1,4 +1,5 @@
 ---
+layout: page
 title: AI 协作实践
 permalink: /blog/series/ai-agent-collaboration/
 ---
