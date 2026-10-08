@@ -1,0 +1,66 @@
+---
+---
+
+/*
+ * 站点自定义样式入口。
+ *
+ * 本文件覆盖主题自带的 assets/css/jekyll-theme-chirpy.scss。
+ * 下面两段 @use 必须与主题原文件保持一致，否则主题样式会整体丢失；
+ * 自定义内容统一追加到文件末尾的「自定义样式」区块。
+ *
+ * 升级主题时，只需对照主题仓库的 assets/css/jekyll-theme-chirpy.scss 检查这两段是否有变化。
+ */
+
+/* 覆盖主题 SCSS 变量（!default 变量在此配置后全局生效）。
+ * 取消注释即可生效；完整变量清单见主题 _sass/abstracts/_variables.scss。 */
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+  // $font-family-base: 'Source Sans Pro', 'Microsoft Yahei', sans-serif,
+  // $font-family-heading: Lato, 'Microsoft Yahei', sans-serif,
+  // $main-content-max-width: 1250px,
+  // $sidebar-width: 260px,
+  // $radius-sm: 6px,
+  // $radius-lg: 10px,
+  // $topbar-height: 3rem
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* ============================================================
+ * 自定义样式
+ *
+ * 方式一（推荐，改颜色）：覆盖主题 CSS 自定义属性。
+ *   本站 theme_mode 为 light，因此变量挂在 :root[data-bs-theme='light'] 下；
+ *   若将来启用深色模式，需要同时覆盖 :root[data-bs-theme='dark']。
+ *   变量清单见主题 _sass/themes/_light.scss 与 _sass/themes/_dark.scss。
+ *
+ * 方式二（改尺寸/字体）：用上方 @use ... with (...) 覆盖 SCSS 变量。
+ *
+ * 方式三：在此直接写普通选择器规则。
+ * ============================================================ */
+
+:root[data-bs-theme='light'] {
+  /* 常用可覆盖的 CSS 变量（取消注释生效）：
+  --main-bg: white;
+  --text-color: #34343c;
+  --heading-color: #2a2a2a;
+  --link-color: #0056b2;
+  --sidebar-bg: #f6f8fa;
+  --sidebar-active-color: #1d1d1d;
+  --topbar-bg: rgb(255 255 255 / 70%);
+  --card-bg: white;
+  */
+}
+
+:root[data-bs-theme='dark'] {
+  /* 深色模式变量覆盖示例（当前 theme_mode 为 light，可暂不启用）：
+  --main-bg: rgb(27 27 30);
+  --text-color: rgb(175 176 177);
+  --link-color: rgb(138 180 248);
+  */
+}
