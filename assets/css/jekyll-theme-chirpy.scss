@@ -2,26 +2,32 @@
 ---
 
 /*
- * 站点自定义样式入口。
- *
- * 本文件覆盖主题自带的 assets/css/jekyll-theme-chirpy.scss。
- * 下面两段 @use 必须与主题原文件保持一致，否则主题样式会整体丢失；
- * 自定义内容统一追加到文件末尾的「自定义样式」区块。
- *
- * 升级主题时，只需对照主题仓库的 assets/css/jekyll-theme-chirpy.scss 检查这两段是否有变化。
+ * 站点自定义样式入口，覆盖主题同名文件。
+ * 两段 @use 必须与主题保持一致，否则主题样式整体丢失；
+ * 自定义内容追加到文件末尾。
  */
 
-/* 覆盖主题 SCSS 变量（!default 变量在此配置后全局生效）。
- * 取消注释即可生效；完整变量清单见主题 _sass/abstracts/_variables.scss。 */
+/* 覆盖主题 SCSS 变量（!default）。完整清单见主题 _sass/abstracts/_variables.scss。 */
 @use 'abstracts/variables' with (
-  $theme: '{{ site.theme_mode }}'
-  // $font-family-base: 'Source Sans Pro', 'Microsoft Yahei', sans-serif,
-  // $font-family-heading: Lato, 'Microsoft Yahei', sans-serif,
-  // $main-content-max-width: 1250px,
-  // $sidebar-width: 260px,
-  // $radius-sm: 6px,
-  // $radius-lg: 10px,
-  // $topbar-height: 3rem
+  $theme: '{{ site.theme_mode }}',
+  // 中文优先字体栈，按平台回退
+  $font-family-base: (
+    'Source Sans Pro',
+    -apple-system,
+    'PingFang SC',
+    'Microsoft YaHei',
+    'Hiragino Sans GB',
+    'Noto Sans CJK SC',
+    sans-serif
+  ),
+  // 标题用 Source Sans Pro（已加载 600/700），避免 Lato 缺字重时合成假粗体
+  $font-family-heading: (
+    'Source Sans Pro',
+    'PingFang SC',
+    'Microsoft YaHei',
+    'Noto Sans CJK SC',
+    sans-serif
+  )
 );
 
 /* prettier-ignore */
@@ -31,36 +37,89 @@
 {%- endif -%}
 ';
 
-/* ============================================================
- * 自定义样式
- *
- * 方式一（推荐，改颜色）：覆盖主题 CSS 自定义属性。
- *   本站 theme_mode 为 light，因此变量挂在 :root[data-bs-theme='light'] 下；
- *   若将来启用深色模式，需要同时覆盖 :root[data-bs-theme='dark']。
- *   变量清单见主题 _sass/themes/_light.scss 与 _sass/themes/_dark.scss。
- *
- * 方式二（改尺寸/字体）：用上方 @use ... with (...) 覆盖 SCSS 变量。
- *
- * 方式三：在此直接写普通选择器规则。
- * ============================================================ */
+/* ============ 自定义样式 ============ */
 
 :root[data-bs-theme='light'] {
-  /* 常用可覆盖的 CSS 变量（取消注释生效）：
-  --main-bg: white;
-  --text-color: #34343c;
-  --heading-color: #2a2a2a;
-  --link-color: #0056b2;
-  --sidebar-bg: #f6f8fa;
-  --sidebar-active-color: #1d1d1d;
-  --topbar-bg: rgb(255 255 255 / 70%);
-  --card-bg: white;
-  */
+  // 覆盖主题 CSS 变量，如 --main-bg、--text-color、--link-color 等
 }
 
 :root[data-bs-theme='dark'] {
-  /* 深色模式变量覆盖示例（当前 theme_mode 为 light，可暂不启用）：
-  --main-bg: rgb(27 27 30);
-  --text-color: rgb(175 176 177);
-  --link-color: rgb(138 180 248);
-  */
+  // 深色模式变量覆盖（当前 theme_mode 为 light）
+}
+
+/* 中文阅读排版 */
+
+/* 汉字无斜体，靠字号和字重区分层级 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/* 中文标题字阶（基准 16px，正文 1rem） */
+h1 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h2 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h3 {
+  font-size: 1.125rem; /* 18px */
+}
+
+h4 {
+  font-size: 1.0625rem; /* 17px */
+}
+
+h5 {
+  font-size: 1rem; /* 16px */
+}
+
+h6 {
+  font-size: 0.9375rem; /* 15px */
+}
+
+main {
+  h2 {
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  h3,
+  h4 {
+    margin: 1.5rem 0 0.625rem;
+  }
+}
+
+.content {
+  font-size: 1rem;
+
+  /* 中西文混排留白 */
+  text-autospace: ideograph-alpha ideograph-numeric;
+
+  p {
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    overflow-wrap: break-word;
+  }
+
+  /* 列表、引用、表格左对齐，避免两端对齐拉出空隙 */
+  li,
+  blockquote,
+  td,
+  th {
+    text-align: left;
+  }
+}
+
+/* 窄屏取消两端对齐 */
+@media (max-width: 767.98px) {
+  .content p {
+    text-align: left;
+  }
 }
